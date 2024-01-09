@@ -11,6 +11,24 @@
       "src": "/(.*)",
       "dest": "myproject/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "MY_ENV_VARIABLE": "my_value"
+  },
+  "pre": {
+    "functions": {
+      "myfunction": {
+        "runtime": "python3.9",
+        "includeFiles": ["myproject/**"],
+        "environment": {
+          "PYTHONPATH": "./myproject"
+        }
+      }
+    },
+    "build": {
+      "commands": [
+        "pip install python-dotenv"
+      ]
+    }
+  }
 }
-
