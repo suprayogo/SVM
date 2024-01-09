@@ -1,6 +1,10 @@
 {
+  "name": "myproject",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "pip install -r myproject/requirements.txt"
+  },
   "dependencies": {
-    "global": "^4.4.0",
-    "vercel": "^33.0.2"
+    "python-dotenv": "^0.19.0"
   }
 }
