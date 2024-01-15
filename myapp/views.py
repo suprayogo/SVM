@@ -176,9 +176,9 @@ def klasifikasi(request):
     X = [[balita.jenis_kelamin, balita.usia, balita.berat_badan, balita.tinggi_badan] for balita in data_balita_diskritis]
     y = [balita.status_gizi for balita in data_balita_diskritis]
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=100)
 
-    model_svm = SVC()
+    model_svm = SVC(kernel='linear')  
 
     model_svm.fit(X_train, y_train)
 
